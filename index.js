@@ -1,16 +1,9 @@
-const taskList = document.getElementById('listTasks');
 const btnAddTask = document.getElementById('addTask');
-const txtNewTask = document.getElementById('newTask');
-const dateDeadline = document.getElementById('deadline');
-const arrTasks = document.getElementsByClassName("tasks");
-
-const jsTasks = [...arrTasks];
-
-console.dir(dateDeadline);
+const btnSortByTask = document.getElementById('sortByTask');
 
 const formatDate = (strDate) => {
   const elem = strDate.split(' ');
-  return `${elem[0]} ${elem[1]} ${elem[2]}`
+  return `${elem[0]} ${elem[1]} ${elem[2]}`;
 }
 
 const handleClickTask = (clickEvent) => {
@@ -20,29 +13,54 @@ const handleClickTask = (clickEvent) => {
 }
 
 const handleSubmitNewTask = () => {
-  const newTask = document.createElement('li');
-  const deadline = document.createElement('time');
+  const dateDeadline = document.getElementById('deadline');
+  const txtNewTask = document.getElementById('newTask');
 
-  newTask.setAttribute('class', 'tasks');
-  newTask.innerText = txtNewTask.value;
-  newTask.addEventListener('click', handleClickTask);
+  if (txtNewTask.value === "" || dateDeadline.value === "") {
+    alert('Please input name of task or deadline');
+  }
+  else {
+    const taskList = document.getElementById('listTasks');
 
-  deadline.setAttribute('datetime', dateDeadline.value);
-  deadline.innerText = formatDate(dateDeadline.valueAsDate.toString());
+    const newTask = document.createElement('li');
+    const deadline = document.createElement('time');
 
-  newTask.appendChild(deadline);
-  taskList.appendChild(newTask);
+    newTask.setAttribute('class', 'tasks');
+    newTask.innerText = txtNewTask.value;
+    newTask.addEventListener('click', handleClickTask);
 
-  txtNewTask.value = "";
-  dateDeadline.value = "";
+    deadline.setAttribute('datetime', dateDeadline.value);
+    deadline.innerText = formatDate(dateDeadline.valueAsDate.toString());
+
+    newTask.appendChild(deadline);
+    taskList.appendChild(newTask);
+
+    txtNewTask.value = "";
+    dateDeadline.value = "";
+  }
+}
+
+const handleSortByTask = () => {
+
+
+  const taskList = document.getElementById('listTasks');
+  const cloneTaskList = taskList.cloneNode(false);
+
+  const jsTasks = [...document.getElementsByClassName("tasks")];
+  const jsSorted = jsTasks.sort((a, b) => {
+    const taskA = a.innerText.toLowerCase();
+    const taskB = b.innerText.toLowerCase();
+    if (taskA < taskB) return -1;
+    if (taskA > taskB) return 1;
+    return 0;
+  });
+
+  jsSorted.forEach((task, index) => {
+    cloneTaskList.appendChild(task);
+  })
+
+  taskList.parentNode.replaceChild(cloneTaskList, taskList);
 }
 
 btnAddTask.addEventListener('click', handleSubmitNewTask);
-
-jsTasks.forEach(task => {
-  task.addEventListener('click', handleClickTask);
-});
-
-
-
-
+btnSortByTask.addEventListener('click', handleSortByTask);

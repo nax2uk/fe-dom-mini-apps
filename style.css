@@ -24,6 +24,7 @@ li.completed::before {
   transform: rotate(45deg);
   width: 0.5em;
 }
+
 time {
   margin: 10px;
 }
@@ -35,3 +36,7 @@ label {
 button {
   margin: 10px;
 } 
+
+.error{
+  color: red;
+}
