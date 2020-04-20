@@ -24,3 +24,14 @@ li.completed::before {
   transform: rotate(45deg);
   width: 0.5em;
 }
+time {
+  margin: 10px;
+}
+
+label {
+  margin: 10px;
+
+}  
+button {
+  margin: 10px;
+} 
