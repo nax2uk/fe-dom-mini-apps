@@ -1,36 +1,38 @@
-# DOM Mini-Apps
+# To Do List App
+This repository is a to-do checklist app.
+- You can add a task.
+- You can check the task off once you have done it by clicking on the task name.
+- You can uncheck the task by clicking it again.
+- You can sort you to-do checklist app by due date or task name.
 
-Today is just about trying some things out and getting to know the DOM. Keep track of what you don't know! Every time you feel some frustration, put that in the bank and know things will be different soon...
+This app has been programmed using node, document and element API and some CSS. This is a sprint I did in Northcoders, to familiarise myself to the DOM model and how to manipulate it using the document and element API.  
 
-### Challenge
+You can find my simple app [here](https://my-to-do-list-dom-app.netlify.app/)
 
-Make a checklist application.
-* It should list the tasks you have set yourself.
-* On clicking, items should be marked complete, with strike-through text and a checkmark. *Hint: don't just add an checkbox input - it'll be more difficult than you think**
-* If they are clicked again, they can be unchecked.
-* It should have an input field at the top, so you can add new items to the checklist.
+## Viewing the app
 
+Clone this repo
 
-Some extension work...
-* Add a due by date to your tasks which renders how long you have to do them, and colours them red if they are overdue.
-* Allow your checklist to be sorted alphabetically or by due date.
+```bash
+git clone https://github.com/northcoders/fe-dom-mini-apps
 
-#### Resources
+cd fe-dom-mini-apps
+```
 
-Stick with MDN as much as possible - Stack Overflow is fine for very specific errors but will not really help you with 'how do I do this/that?'
+View locally on your browser by opening the file index.html
 
+## Links
+- You can find the api hosted [here](https://nc--news-server.herokuapp.com/api)
+- You can find the front-end react app deployed [here](https://northcoders-news-website.netlify.app/)
+- You can find the front-end react repository [here](https://github.com/nax2uk/fe-nc-news.git)
+
+## Built With
+* [HTML](https://en.wikipedia.org/wiki/HTML)
+* [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 * [Document API](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 * [Element API](https://developer.mozilla.org/en-US/docs/Web/API/Element)
 * [Node API](https://developer.mozilla.org/en-US/docs/Web/API/Node)
 
-(Note that Elements are a type of Node! So some methods you might expect to exist on the Element API are actully Node methods.)
+## Authors
 
-#### More to play with...
-
-* A two player noughts and crosses. You know the rules. Build it! If you're feeling fancy you may want to include a score counter, and alternate the player that goes first. 
-
-* A two player Connect Four game. This is very similar to the noughts and crosses game, but with harder logic.
-
-* A [Simon Game](https://en.wikipedia.org/wiki/Simon_(game)). Build a Simon game that provides a user with sound/colour based patterns, which the user should remember and repeat. The pattern should get incrementally more difficult for the user to recall.
-
-* [Battleships](https://en.wikipedia.org/wiki/Battleship_(game)). Build a Battleship game to be played with two people. To begin with, you may wish to start the ships in the same place every time, as placing them can be quite tricky! You should take into account that neither player should be able to see each other's side of the board, so the game should include a turn-taking mechanism, which obscures the opponent's side of the board.
+* **Azlina Yeo** - [nax2uk](https://github.com/nax2uk)
