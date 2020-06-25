@@ -23,6 +23,7 @@ const handleSubmitNewTask = () => {
     const taskList = document.getElementById('listTasks');
 
     const newTask = document.createElement('li');
+    const newP = document.createElement('p');
     const deadline = document.createElement('time');
     const priority = document.createElement('span');
 
@@ -39,8 +40,11 @@ const handleSubmitNewTask = () => {
     deadline.innerText = "Due: " + formatDate(dateDeadline.valueAsDate.toString());
     deadline.addEventListener('click', handleClickTask);
 
-    newTask.appendChild(deadline);
-    newTask.appendChild(priority);
+    newP.appendChild(deadline);
+    newP.appendChild(priority);
+
+    newTask.appendChild(newP);
+
     taskList.appendChild(newTask);
 
     txtNewTask.value = "";
@@ -53,7 +57,6 @@ const handleSortByTask = () => {
 
   const taskList = document.getElementById('listTasks');
   const cloneTaskList = taskList.cloneNode(false);
-
   const jsTasks = [...document.getElementsByClassName("tasks")];
   const jsSorted = jsTasks.sort((a, b) => {
     const taskA = a.innerText.toLowerCase();
@@ -76,7 +79,6 @@ const handleSortByPriority = () => {
   const cloneTaskList = taskList.cloneNode(false);
   const jsPriority = [...document.getElementsByClassName('priority')];
   const jsSorted = jsPriority.sort((a, b) => {
-    console.dir(a);
     const taskA = a.value;
     const taskB = b.value;
     if (taskA > taskB) return 1;
@@ -85,7 +87,7 @@ const handleSortByPriority = () => {
   })
 
   jsSorted.forEach(priority => {
-    cloneTaskList.appendChild(priority.parentNode);
+    cloneTaskList.appendChild(priority.parentNode.parentNode);
   })
   taskList.parentNode.replaceChild(cloneTaskList, taskList);
 
@@ -104,7 +106,7 @@ const handleSortByDate = () => {
   })
 
   jsSorted.forEach(date => {
-    cloneTaskList.appendChild(date.parentNode);
+    cloneTaskList.appendChild(date.parentNode.parentNode);
   })
   taskList.parentNode.replaceChild(cloneTaskList, taskList);
 
