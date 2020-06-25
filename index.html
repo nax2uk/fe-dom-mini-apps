@@ -3,28 +3,57 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scaler=1.0">
-  <title>Checklist Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
   <link rel="stylesheet" href="style.css">
   <script src="index.js" defer>
   </script>
 </head>
 
 <body>
-  <h1>My To Do List</h1>
-  <label for="newTask">Add a new task:</label>
-  <input type="text" id="newTask">
-  <label for="deadline">Add a due date:</label>
-  <input type="date" id="deadline">
-  <button id="addTask">Submit</button>
-  <hr>
+  <div class="box" id="heading">
+    <h1></h1>
+  </div>
 
-  <ul id="listTasks">
-  </ul>
+  <div class="box">
+    <div class="btn-group">
+      <button id="sortByDate">Ascending Date </button>
+      <button id="sortByTask">Alphabetical Order</button>
+      <button id="sortByPriority">Highest Priority</button>
+    </div>
 
-  <hr>
-  <button id="sortByDate">Sort Tasks By Ascending Date </button>
-  <button id="sortByTask">Sort Tasks in Alphabetical Order</button>
+    <ul id="listTasks">
+    </ul>
+  </div>
+  <div class="box">
+    <h3>Add Task</h3>
+    <table>
+      <tr>
+        <td class="lbl"><label for="newTask">Task:</label></td>
+        <td colspan="2"><input type="text" id="newTask" placeholder="New item"></td>
+      </tr>
+      <tr>
+        <td class="lbl"><label for="optPriority">Priority:</label></td>
+        <td colspan="2">
+          <select id="newPriority" name="optPriority">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="lbl">
+          <label for="deadline">Due date:</label></td>
+        <td class="calendar"><input type="date" id="deadline"></td>
+        <td class="btn-add"><button id="addTask" class="btn-round">+</button></td>
+      </tr>
+    </table>
+
+
+
+  </div>
 </body>
 
 </html>
