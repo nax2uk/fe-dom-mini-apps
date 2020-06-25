@@ -3,7 +3,7 @@ This repository is a to-do checklist app.
 - You can add a task.
 - You can check the task off once you have done it by clicking on the task name.
 - You can uncheck the task by clicking it again.
-- You can sort you to-do checklist app by due date or task name.
+- You can sort you to-do checklist app by due date, priority or task name.
 
 This app has been programmed using node, document and element API and some CSS. This is a sprint I did in Northcoders, to familiarise myself to the DOM model and how to manipulate it using the document and element API.  
 
