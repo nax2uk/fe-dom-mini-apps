@@ -32,3 +32,7 @@ View locally on your browser by opening the file index.html
 ## Authors
 
 * **Azlina Yeo** - [nax2uk](https://github.com/nax2uk)
+
+## Changelog
+### 25 June 2020
+- Added Styling with CSS
